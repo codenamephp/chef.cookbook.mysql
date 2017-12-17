@@ -5,14 +5,19 @@
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-unless os.windows?
-  # This is an example test, replace with your own test.
-  describe user('root'), :skip do
-    it { should exist }
+control "mysql-1.0" do
+  title "Install mysql/mariadb"
+  desc "Install mysql/mariadb"
+  
+  describe command('sudo mysql --version') do
+    its('stdout') { should match /mysql  Ver/ }
   end
-end
-
-# This is an example test, replace it with your own test.
-describe port(80), :skip do
-  it { should_not be_listening }
+  
+  describe file('/etc/mysql/conf.d/50-innodb.cnf') do
+   it { should exist }
+  end
+  
+  describe command('sudo mysql -NBe "SHOW GLOBAL VARIABLES WHERE Variable_name=\'innodb_file_per_table\';"') do
+    its('stdout') { should match /innodb_file_per_table\s+ON/ }
+  end
 end
