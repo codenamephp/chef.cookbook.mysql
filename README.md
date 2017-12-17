@@ -26,7 +26,7 @@ None
 Add the cookbook to your Berksfile:
 
 ```ruby
-cookbook 'chef.cookbook.mysql'
+cookbook 'codenamephp_mysql'
 ```
 
 Add the cookbook to your runlist, e.g. in a role:
@@ -37,7 +37,7 @@ Add the cookbook to your runlist, e.g. in a role:
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-	  "recipe[chef.cookbook.mysql]"
+	  "recipe[codenamephp_mysql]"
   ]
 }
 ```
