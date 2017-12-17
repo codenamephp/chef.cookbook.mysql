@@ -1,12 +1,12 @@
 #
-# Cookbook:: chef.cookbook.mysql
+# Cookbook:: codenamephp_mysql
 # Spec:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef.cookbook.mysql::default' do
+describe 'codenamephp_mysql::default' do
   context 'When all attributes are default' do
     let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
     let(:template) { chef_run.template('/etc/mysql/conf.d/50-innodb.cnf') }

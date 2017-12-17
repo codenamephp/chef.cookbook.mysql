@@ -1,5 +1,5 @@
 #
-# Cookbook:: chef.cookbook.mysql
+# Cookbook:: codenamephp_mysql
 # Recipe:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
