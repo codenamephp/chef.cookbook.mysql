@@ -25,13 +25,12 @@ before_script:
   - chef --version
   - cookstyle --version
   - foodcritic --version
-  
-script: kitchen verify ${INSTANCE}
-  
+   
 matrix:
   include:
     - script:
       - chef exec berks install
       - chef exec foodcritic .
       - chef exec rspec
+      - kitchen verify ${INSTANCE}
       env: UNIT_AND_LINT=1
