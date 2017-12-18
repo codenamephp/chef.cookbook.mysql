@@ -1,0 +1,16 @@
+language: ruby
+
+cache:
+- apt
+
+before_install:
+- sudo apt-get update -qq
+- curl -L https://omnitruck.chef.io/install.sh | sudo bash
+
+install:
+- chef exec berks install
+
+script:
+- chef exec rspec
+- chef exec foodcritic .
+- chef exec kitchen test
