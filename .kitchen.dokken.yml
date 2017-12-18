@@ -10,6 +10,9 @@ provisioner:
   name: dokken
   deprecations_as_errors: true
 
+verifier:
+  name: inspec
+  
 platforms:
   - name: debian-9
     driver:
