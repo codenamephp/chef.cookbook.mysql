@@ -11,7 +11,7 @@ provisioner:
   deprecations_as_errors: true
 
 verifier:
-  name: inspec
+  root_path: '/opt/verifier'
   
 platforms:
   - name: debian-9
