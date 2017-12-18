@@ -1,4 +1,15 @@
-sudo: false
+sudo: required
+dist: trusty
+
+services: docker
+
+env:
+  global:
+    - KITCHEN_YAML=.kitchen.yml
+    - KITCHEN_LOCAL_YAML=.kitchen.dokken.yml
+  matrix:
+    - INSTANCE=default-debian-9
+  
 addons:
   apt:
     sources:
@@ -9,12 +20,18 @@ addons:
 install: true
 
 before_script:
-  - eval "$(/opt/chefdk/bin/chef shell-init bash)"
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+  - eval "$(chef shell-init bash)"
+  - chef --version
+  - cookstyle --version
+  - foodcritic --version
   
-script:
-  - /opt/chefdk/embedded/bin/chef --version
-  - /opt/chefdk/embedded/bin/foodcritic --version
-  - /opt/chefdk/bin/chef exec berks install
-  - /opt/chefdk/bin/chef exec foodcritic .
-  - /opt/chefdk/bin/chef exec rspec
-  - /opt/chefdk/bin/chef exec kitchen test
+script: kitchen verify ${INSTANCE}
+  
+matrix:
+  include:
+    - script:
+      - chef exec berks install
+      - chef exec foodcritic .
+      - chef exec rspec
+      env: UNIT_AND_LINT=1
