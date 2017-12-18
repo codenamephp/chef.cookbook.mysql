@@ -9,6 +9,12 @@ control "mysql-1.0" do
   title "Install mysql/mariadb"
   desc "Install mysql/mariadb"
   
+  describe service('mysql') do
+    it { should be_installed }
+    it { should be_enabled }
+    it { should be_running }
+  end
+
   describe command('sudo mysql --version') do
     its('stdout') { should match /mysql  Ver/ }
   end
