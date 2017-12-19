@@ -15,7 +15,7 @@ control "mysql-1.0" do
     it { should be_running }
   end
 
-  describe command('sudo mysql --version') do
+  describe command('mysql --version') do
     its('stdout') { should match /mysql  Ver/ }
   end
   
@@ -23,7 +23,7 @@ control "mysql-1.0" do
    it { should exist }
   end
   
-  describe command('sudo mysql -NBe "SHOW GLOBAL VARIABLES WHERE Variable_name=\'innodb_file_per_table\';"') do
+  describe command('mysql -NBe "SHOW GLOBAL VARIABLES WHERE Variable_name=\'innodb_file_per_table\';"') do
     its('stdout') { should match /innodb_file_per_table\s+ON/ }
   end
 end
