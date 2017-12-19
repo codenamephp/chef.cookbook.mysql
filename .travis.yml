@@ -34,3 +34,6 @@ matrix:
       - chef exec rspec
       - kitchen verify ${INSTANCE}
       env: UNIT_AND_LINT=1
+      
+ notifications:
+    slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb
