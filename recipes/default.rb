@@ -8,7 +8,7 @@ package 'mysql-server'
 package 'mysql-client'
 
 service 'mysql' do
-  action %i(start enable)
+  action %i[start enable]
 end
 
 template '/etc/mysql/conf.d/50-innodb.cnf' do

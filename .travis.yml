@@ -5,11 +5,9 @@ services: docker
 
 env:
   global:
-    - KITCHEN_YAML=.kitchen.yml
     - KITCHEN_LOCAL_YAML=.kitchen.dokken.yml
-  matrix:
-    - INSTANCE=default-debian-9
-  
+    - ENV=CI
+      
 addons:
   apt:
     sources:
@@ -26,14 +24,9 @@ before_script:
   - cookstyle --version
   - foodcritic --version
    
-matrix:
-  include:
-    - script:
-      - chef exec berks install
-      - chef exec foodcritic .
-      - chef exec rspec
-      - kitchen verify ${INSTANCE}
-      env: UNIT_AND_LINT=1
+  - script:
+    - chef exec berks install
+    - chef exec rake
       
 notifications:
   slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb
