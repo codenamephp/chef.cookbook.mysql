@@ -9,10 +9,6 @@ def ci?
   ENV['ENV'] == 'ci'
 end
 
-task :env do
-  puts ci?
-end
-
 task default: %w[style unit integration]
 
 namespace :style do
@@ -74,19 +70,14 @@ namespace :integration do
     run_kitchen(args.action, args.regexp)
   end
 
-  desc 'Run Test Kitchen integration tests using docker'
-  task :docker, %i[regexp action] do |_t, args|
-    run_kitchen(args.action, args.regexp, local_config: '.kitchen.docker.yml')
-  end
-
-  desc 'Run Test Kitchen integration tests in the cloud'
-  task :cloud, %i[regexp action] do |_t, args|
-    run_kitchen(args.action, args.regexp, local_config: '.kitchen.cloud.yml')
+  desc 'Run Test Kitchen integration tests using dokken'
+  task :dokken, %i[regexp action] do |_t, args|
+    run_kitchen(args.action, args.regexp, local_config: '.kitchen.dokken.yml')
   end
 end
 
 desc 'Run Test Kitchen integration tests'
-task :integration, %i[regexp action] => ci? ? %w[integration:docker] : %w[integration:vagrant]
+task :integration, %i[regexp action] => ci? ? %w[integration:dokken] : %w[integration:vagrant]
 
 namespace :release do
   require 'stove/rake_task'
