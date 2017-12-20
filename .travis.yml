@@ -4,9 +4,7 @@ dist: trusty
 services: docker
 
 env:
-  global:
-    - KITCHEN_LOCAL_YAML=.kitchen.dokken.yml
-    - ENV=CI
+  - ENV=CI
 
 addons:
   apt:
