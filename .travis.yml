@@ -4,7 +4,7 @@ dist: trusty
 services: docker
 
 env:
-  - "ENV=CI"
+  - ENV="ci"
 
 addons:
   apt:

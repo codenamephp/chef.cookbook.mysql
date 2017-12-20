@@ -6,7 +6,11 @@ require 'rake'
 # @example
 #   ci? #=> false
 def ci?
-  ENV['CI'] == 'true'
+  ENV['ENV'] == 'ci'
+end
+
+task :env do
+  puts ci?
 end
 
 task default: %w[style unit integration]
