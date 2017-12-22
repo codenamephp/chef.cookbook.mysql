@@ -1,4 +1,5 @@
 require 'rake'
+require 'stove/rake_task'
 
 # Checks if we are inside a Continuous Integration machine.
 #
@@ -27,11 +28,9 @@ task style: %w[style:chef style:ruby]
 namespace :unit do
   require 'rspec/core/rake_task'
   desc 'Run unit tests with rspec'
-  task :rspec do
-    RSpec::Core::RakeTask.new(:unit) do |t|
-      t.rspec_opts = '--color --format progress'
-      t.pattern = 'spec/unit/**{,/*/**}/*_spec.rb'
-    end
+  RSpec::Core::RakeTask.new(:rspec) do |t|
+    t.rspec_opts = '--color --format progress'
+    t.pattern = 'spec/unit/**{,/*/**}/*_spec.rb'
   end
 end
 
@@ -82,7 +81,18 @@ task :integration, %i[regexp action] => ci? ? %w[integration:dokken] : %w[integr
 namespace :release do
   require 'stove/rake_task'
   desc 'Tag and release to supermarket with stove'
-  task :stove do
-    Stove::RakeTask.new
+  Stove::RakeTask.new(:stove) do |task|
+    task.stove_opts = task.stove_opts = [
+      '--username', 'codenamephp',
+      '--key', './.chef/codenamephp.pem'
+    ]
+  end
+
+  desc 'Upload to chef server with berks'
+  task :berksUpload do
+    sh 'chef exec berks upload'
   end
 end
+
+desc 'Run the release cycle'
+task release: %w[release:stove release:berksUpload]
