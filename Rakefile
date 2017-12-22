@@ -84,7 +84,7 @@ namespace :release do
   Stove::RakeTask.new(:stove) do |task|
     task.stove_opts = task.stove_opts = [
       '--username', 'codenamephp',
-      '--key', './.chef/codenamephp.pem'
+      '--key', './codenamephp.pem'
     ]
   end
 
