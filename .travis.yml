@@ -4,37 +4,35 @@ dist: trusty
 services: docker
 
 env:
-  - ENV="ci"
+- ENV="ci"
 
 addons:
   apt:
     sources:
-      - chef-current-trusty
+    - chef-current-trusty
     packages:
-      - chefdk
+    - chefdk
 
 before_install:
-  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables
+    -N DOCKER )
   - eval "$(chef shell-init bash)"
   - chef --version
   - cookstyle --version
   - foodcritic --version
-  
-install: 
+install:
   - chef exec bundler install
   - chef exec berks install
-   
 script:
   - chef exec rake
 
 before_deploy:
-  - openssl aes-256-cbc -K $encrypted_08601d0550bd_key -iv $encrypted_08601d0550bd_iv -in codenamephp.pem.enc -out codenamephp.pem -d
-
+  - openssl aes-256-cbc -K $encrypted_4c0189a98bd3_key -iv $encrypted_4c0189a98bd3_iv -in codenamephp.pem.enc -out codenamephp.pem -d
 deploy:
   provider: script
   script: chef exec rake release
-  on: 
+  on:
     tags: true
-
+    
 notifications:
   slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb
