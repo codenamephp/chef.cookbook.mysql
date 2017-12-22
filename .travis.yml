@@ -28,11 +28,12 @@ script:
 
 before_deploy:
   - openssl aes-256-cbc -K $encrypted_4c0189a98bd3_key -iv $encrypted_4c0189a98bd3_iv -in codenamephp.pem.enc -out codenamephp.pem -d
+  - git status
 deploy:
   provider: script
   script: chef exec rake release
   on:
-    tags: true
-    
+    branch: master
+
 notifications:
   slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb
