@@ -33,7 +33,8 @@ before_deploy:
 deploy:
   provider: script
   script: chef exec rake release
-  on: tags
+  on: 
+    tags: true
 
 notifications:
   slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb
