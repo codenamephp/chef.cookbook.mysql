@@ -14,7 +14,7 @@ def use_dokken?
   ENV['USE_DOKKEN'] || ci?
 end
 
-task default: %w[style]
+task default: %w[style unit integration]
 
 namespace :style do
   require 'rubocop/rake_task'
