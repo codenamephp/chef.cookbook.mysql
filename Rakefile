@@ -85,7 +85,7 @@ namespace :release do
     task.stove_opts = task.stove_opts = [
       '--username', 'codenamephp',
       '--key', './codenamephp.pem',
-      '--remote', '--travis-push'
+      '--remote', 'travis-push'
     ]
   end
 
