@@ -30,6 +30,7 @@ tmtags
 .project
 .settings
 mkmf.log
+.vscode
 
 ## COMPILED ##
 ##############
@@ -42,6 +43,7 @@ a.out
 *.dll
 *.exe
 */rdoc/
+bin
 
 # Testing #
 ###########
@@ -73,6 +75,7 @@ Berksfile
 Berksfile.lock
 cookbooks/*
 tmp
+.berkshelf
 
 # Cookbooks #
 #############
@@ -80,6 +83,8 @@ CONTRIBUTING
 CHANGELOG*
 TESTING*
 MAINTAINERS.toml
+.ktichen*.yml
+*.pem
 
 # Strainer #
 ############
@@ -92,3 +97,8 @@ Strainerfile
 ###########
 .vagrant
 Vagrantfile
+
+# Ruby
+*.lock
+Rakefile
+.bundle
