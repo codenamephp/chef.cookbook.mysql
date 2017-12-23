@@ -83,7 +83,7 @@ CONTRIBUTING
 CHANGELOG*
 TESTING*
 MAINTAINERS.toml
-.ktichen*.yml
+.kitchen*.yml
 *.pem
 
 # Strainer #
