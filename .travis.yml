@@ -30,6 +30,7 @@ before_deploy:
   - git config --local user.name "Travis CI"
   - git config --local user.email "travis@codename-php.de"
   - git remote add travis-push "https://$GH_TOKEN@github.com/codenamephp/chef.cookbook.mysql.git"
+  - git reset --hard
   - git status
 deploy:
   - provider: script
