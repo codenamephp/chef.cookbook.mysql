@@ -33,6 +33,7 @@ deploy:
   - provider: chef-supermarket
     user_id: "codenamephp"
     client_key: "codenamephp.pem"
+    cookbook_category: "Databases"
     on:
       tags: true
   - provider: script
