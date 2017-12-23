@@ -1,6 +1,3 @@
-require 'rake'
-require 'stove/rake_task'
-
 # Checks if we are inside a Continuous Integration machine.
 #
 # @return [Boolean] whether we are inside a CI.
@@ -83,14 +80,9 @@ desc 'Run Test Kitchen integration tests'
 task :integration, %i[regexp action] => ci? || use_dokken? ? %w[integration:dokken] : %w[integration:vagrant]
 
 namespace :release do
-  require 'stove/rake_task'
   desc 'Tag and release to supermarket with stove'
-  Stove::RakeTask.new(:stove) do |task|
-    task.stove_opts = task.stove_opts = [
-      '--username', 'codenamephp',
-      '--key', './codenamephp.pem',
-      '--log-level', 'debug'
-    ]
+  task :stove do
+    sh 'chef exec stove --username codenamephp --key ./codenamephp.pem'
   end
 
   desc 'Upload to chef server with berks'
