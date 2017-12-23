@@ -99,4 +99,4 @@ namespace :release do
 end
 
 desc 'Run the release cycle'
-task release: %w[release:berksUpload]
+task release: %w[release:stove release:berksUpload]
