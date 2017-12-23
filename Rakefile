@@ -14,7 +14,7 @@ def use_dokken?
   ENV['USE_DOKKEN'] || ci?
 end
 
-task default: %w[style unit integration]
+task default: %w[style]
 
 namespace :style do
   require 'rubocop/rake_task'
@@ -89,7 +89,8 @@ namespace :release do
     task.stove_opts = task.stove_opts = [
       '--username', 'codenamephp',
       '--key', './codenamephp.pem',
-      '--remote', 'travis-push'
+      '--remote', 'travis-push',
+      '--log-level', 'debug'
     ]
   end
 
