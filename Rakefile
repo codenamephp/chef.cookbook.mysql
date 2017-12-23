@@ -10,6 +10,10 @@ def ci?
   ENV['ENV'] == 'ci'
 end
 
+def use_dokken?
+  ENV['USE_DOKKEN'] || ci?
+end
+
 task default: %w[style unit integration]
 
 namespace :style do
@@ -76,7 +80,7 @@ namespace :integration do
 end
 
 desc 'Run Test Kitchen integration tests'
-task :integration, %i[regexp action] => ci? ? %w[integration:dokken] : %w[integration:vagrant]
+task :integration, %i[regexp action] => ci? || use_dokken? ? %w[integration:dokken] : %w[integration:vagrant]
 
 namespace :release do
   require 'stove/rake_task'
@@ -84,9 +88,7 @@ namespace :release do
   Stove::RakeTask.new(:stove) do |task|
     task.stove_opts = task.stove_opts = [
       '--username', 'codenamephp',
-      '--key', './codenamephp.pem',
-      '--remote', 'travis-push',
-      '--log-level', 'debug'
+      '--key', './codenamephp.pem'
     ]
   end
 
@@ -97,4 +99,4 @@ namespace :release do
 end
 
 desc 'Run the release cycle'
-task release: %w[release:stove release:berksUpload]
+task release: %w[release:berksUpload]
