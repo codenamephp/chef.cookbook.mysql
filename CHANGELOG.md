@@ -1,5 +1,14 @@
 # Change Log
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.mysql/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.8...HEAD)
+
+**Implemented enhancements:**
+
+- Restrict travis deployments to master [\#1](https://github.com/codenamephp/chef.cookbook.mysql/issues/1)
+- Fix \#1: Added conditions for master branch to release since releases … [\#2](https://github.com/codenamephp/chef.cookbook.mysql/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v0.0.8](https://github.com/codenamephp/chef.cookbook.mysql/tree/v0.0.8) (2017-12-23)
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.5...v0.0.8)
 
