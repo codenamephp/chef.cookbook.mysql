@@ -2,6 +2,12 @@ language: ruby
 sudo: required
 dist: trusty
 
+branches:
+  only:
+  - master
+  - dev
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  
 services: docker
 
 env:
@@ -32,6 +38,8 @@ before_deploy:
   - git remote set-url --push origin "https://$GH_TOKEN@github.com/codenamephp/chef.cookbook.mysql.git"
 deploy:
   - provider: script
+    on:
+      branch: master
     skip_cleanup: true
     script: chef exec rake release
   
