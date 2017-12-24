@@ -1,8 +1,7 @@
 # Change Log
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.mysql/tree/HEAD)
-
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.8...HEAD)
+## [v0.0.9](https://github.com/codenamephp/chef.cookbook.mysql/tree/v0.0.9) (2017-12-24)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.8...v0.0.9)
 
 **Implemented enhancements:**
 
