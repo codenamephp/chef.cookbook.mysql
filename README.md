@@ -1,4 +1,5 @@
 # Chef Cookbook MySQL
+[![Build Status](https://travis-ci.org/codenamephp/chef.cookbook.mysql.svg?branch=dev)](https://travis-ci.org/codenamephp/chef.cookbook.mysql)
 
 The default cookbook installs mysql/mariadb. The install method right now is only "package", although docker is planned for the future.
 
