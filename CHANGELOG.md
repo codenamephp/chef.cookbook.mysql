@@ -6,6 +6,7 @@
 
 **Implemented enhancements:**
 
+- Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
 - Restrict travis deployments to master [\#1](https://github.com/codenamephp/chef.cookbook.mysql/issues/1)
 - Fix \#1: Added conditions for master branch to release since releases … [\#2](https://github.com/codenamephp/chef.cookbook.mysql/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
 
