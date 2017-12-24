@@ -2,6 +2,12 @@ language: ruby
 sudo: required
 dist: trusty
 
+branches:
+  only:
+  - master
+  - dev
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  
 services: docker
 
 env:
