@@ -1,13 +1,37 @@
 # Change Log
 
+## [1.0.0](https://github.com/codenamephp/chef.cookbook.mysql/tree/1.0.0) (2018-08-25)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.9...1.0.0)
+
+**Implemented enhancements:**
+
+- MySQL 5.6 [\#8](https://github.com/codenamephp/chef.cookbook.mysql/issues/8)
+- Auto generate changelog [\#7](https://github.com/codenamephp/chef.cookbook.mysql/issues/7)
+
+**Merged pull requests:**
+
+- Updated github token for travis [\#10](https://github.com/codenamephp/chef.cookbook.mysql/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
+- RELEASE 1.0.0 [\#9](https://github.com/codenamephp/chef.cookbook.mysql/pull/9) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v0.0.9](https://github.com/codenamephp/chef.cookbook.mysql/tree/v0.0.9) (2017-12-24)
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.8...v0.0.9)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/0.0.9...v0.0.9)
+
+**Merged pull requests:**
+
+- Bumped cookbook version for release [\#6](https://github.com/codenamephp/chef.cookbook.mysql/pull/6) ([bastianschwarz](https://github.com/bastianschwarz))
+
+## [0.0.9](https://github.com/codenamephp/chef.cookbook.mysql/tree/0.0.9) (2017-12-24)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.8...0.0.9)
 
 **Implemented enhancements:**
 
 - Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
 - Restrict travis deployments to master [\#1](https://github.com/codenamephp/chef.cookbook.mysql/issues/1)
 - Fix \#1: Added conditions for master branch to release since releases … [\#2](https://github.com/codenamephp/chef.cookbook.mysql/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
+
+**Merged pull requests:**
+
+- Release 0.0.9 [\#4](https://github.com/codenamephp/chef.cookbook.mysql/pull/4) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v0.0.8](https://github.com/codenamephp/chef.cookbook.mysql/tree/v0.0.8) (2017-12-23)
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v0.0.5...v0.0.8)
