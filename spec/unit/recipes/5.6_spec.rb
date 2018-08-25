@@ -15,6 +15,10 @@ describe 'codenamephp_mysql::5.6' do
       expect { chef_run }.to_not raise_error
     end
 
+    it 'installs dirmngr from package' do
+      expect(chef_run).to install_package('dirmngr')
+    end
+
     it 'adds the apt repo' do
       expect(chef_run).to add_apt_repository('oracle mysql')
     end
