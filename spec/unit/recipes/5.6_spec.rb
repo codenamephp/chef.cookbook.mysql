@@ -1,12 +1,12 @@
 #
 # Cookbook:: codenamephp_mysql
-# Spec:: default
+# Spec:: 5.6
 #
-# Copyright:: 2017, The Authors, All Rights Reserved.
+# Copyright:: 2018, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'codenamephp_mysql::default' do
+describe 'codenamephp_mysql::5.6' do
   context 'When all attributes are default' do
     let(:chef_run) { ChefSpec::SoloRunner.converge(described_recipe) }
     let(:template) { chef_run.template('/etc/mysql/conf.d/50-innodb.cnf') }
@@ -15,11 +15,15 @@ describe 'codenamephp_mysql::default' do
       expect { chef_run }.to_not raise_error
     end
 
-    it 'installs mysql server from package' do
+    it 'adds the apt repo' do
+      expect(chef_run).to add_apt_repository('oracle mysql')
+    end
+
+    it 'installs mysql-server from package' do
       expect(chef_run).to install_package('mysql-server')
     end
 
-    it 'installs mysql client from package' do
+    it 'installs mysql-client from package' do
       expect(chef_run).to install_package('mysql-client')
     end
 

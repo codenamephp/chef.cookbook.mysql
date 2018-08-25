@@ -2,6 +2,10 @@ AllCops:
   Exclude:
     - 'bin/**'
     - 'bundler/**'
+    - 'vendor/**'
+
+Layout/EndOfLine:
+  EnforcedStyle: lf
 
 Metrics/LineLength:
   Max: 160

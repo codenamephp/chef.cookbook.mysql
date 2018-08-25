@@ -1,11 +1,11 @@
-# Inspec test for recipe codenamephp_mysql::default
+# Inspec test for recipe .::5.6
 
 # The Inspec reference, with examples and extensive documentation, can be
 # found at http://inspec.io/docs/reference/resources/
 
-control 'mysql-1.0' do
-  title 'Install mysql/mariadb'
-  desc 'Install mysql/mariadb'
+control 'oracle mysql-1.0' do
+  title 'Install oracle mysql version 5.6'
+  desc 'Install oracle mysql version 5.6 from the official oracle apt repository'
 
   describe service('mysql') do
     it { should be_installed }
@@ -14,7 +14,7 @@ control 'mysql-1.0' do
   end
 
   describe command('mysql --version') do
-    its('stdout') { should match(/mysql  Ver/) }
+    its('stdout') { should match(/mysql  Ver.*Distrib 5\.6/) }
   end
 
   describe file('/etc/mysql/conf.d/50-innodb.cnf') do
