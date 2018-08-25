@@ -28,7 +28,7 @@ install:
   - gem install github_changelog_generator
 
 script:
-  - chef exec ci
+  - chef exec rake ci
   
 deploy:
   - provider: script
