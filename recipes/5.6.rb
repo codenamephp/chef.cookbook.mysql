@@ -4,6 +4,8 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
+package 'dirmngr' # needed to add the key, missing in some base boxes
+
 apt_repository 'oracle mysql' do
   uri 'http://repo.mysql.com/apt/debian'
   repo_name 'oracle-mysql'
