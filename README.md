@@ -42,4 +42,17 @@ Add the cookbook to your runlist, e.g. in a role:
   ]
 }
 ```
+
+## Cookbooks
+
+### Default
+The default cookbook just installs the mysql-server and mysql-client package from whatever source is configured in the os. It also makes sure the mysql service is enabled
+and started and installs a configuration template that makes sure each innodb table is it's own file since all tables in a single file tends to cause huge db files as the
+disk space is never freed if a table is deleted.
+
+### 5.6
+The 5.6 cookbook adds the official oracle apt repository for version 5.6 before installing the mysql-server and mysql client package. It also makes sure the mysql service is enabled
+and started and installs a configuration template that makes sure each innodb table is it's own file since all tables in a single file tends to cause huge db files as the
+disk space is never freed if a table is deleted.
+
 [chef-mysql]: https://supermarket.chef.io/cookbooks/mysql
