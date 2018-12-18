@@ -10,8 +10,7 @@ apt_repository 'oracle mysql' do
   uri 'http://repo.mysql.com/apt/debian'
   repo_name 'oracle-mysql'
   components ['mysql-apt-config', 'mysql-5.6', 'mysql-tools']
-  keyserver 'pgp.mit.edu'
-  key '5072E1F5'
+  key 'A4A9406876FCBD3C456770C88C718D3B5072E1F5'
   deb_src true
 end
 
