@@ -18,8 +18,8 @@ describe 'codenamephp_mysql::innodb_file_per_table' do
     it 'adds innodb config template and restarts mysql service immediately' do
       expect(chef_run).to create_template('/etc/mysql/conf.d/50-innodb.cnf').with(
         source: 'innodb.erb',
-        user:   'root',
-        group:  'root'
+        user: 'root',
+        group: 'root'
       )
       expect(template).to notify('service[mysql]').to(:restart).immediately
     end

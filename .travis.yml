@@ -12,7 +12,6 @@ services: docker
 
 env:
   global:
-    - ENV="ci"
     - secure: "d9z1iUX8c3bMiTdYspOPaSOqMCBnVS4lts3Hns57OWajpmYrPC28uZW9a10Fi1mLnJKY7zdFPIDDQJLxFe4IL3DuUQsPcM/xAj5g4IFXTy1PBXnzODftllhqhVG0fa8U+VkqeEhSsTJXGP6hvObPfwj6Ov71yiwoUe6lvRLeWjbwJR4TMBz8a+fjXV1Zc/UnHiJEW7AssG+GfBPSzYJg6TzeFNwV0NqhPN9qnJkgsaizoZ6EGkeZ1i0e5889GgHTT3O/IwRfZONZmalx3sXi4MKwMpX7nXO8FI2B22LUML/tWr6NtiJGuRdzEA9eZd9aLxQb0txfQcxi0nyVOUCbomNtpk38jXj1R1RfgXH9W2lbg52C47jZtXClf6eHZUAvJj7WxQA/6PAspCEpGB8kGhGOpqUl6OhkBNtkImIGbWVI5L7eeDBDiKwJQnBG9qhRha3+PBPCrLOzDeOPAlXDO9JIBrUT3oknVxe0ae2+6kzdE2O0NzAZmeOQFU04kCozL17Q/UaeuULSLoE3tOnStwoRVYq9QhqGfu7TYvwRPu79efWpIs+6SR8ZEYIaFGctfp6OO2TyVlI2JHYbYTCAhoMU3gdakoZQkSRbC4sF+QD7BRXSz8hUIptE1Gb0MS6cs9NF/FKi3eJEa/g9PMYez/PgKlq7cH+Qus+0OKAIfwI="
 addons:
   apt:
@@ -26,9 +25,10 @@ install:
   - eval "$(chef shell-init bash)"
   - openssl aes-256-cbc -K $encrypted_4c0189a98bd3_key -iv $encrypted_4c0189a98bd3_iv -in codenamephp.pem.enc -out codenamephp.pem -d
   - gem install github_changelog_generator
+  - gem install activesupport
 
 script:
-  - chef exec rake ci
+  - chef exec rake
   
 deploy:
   - provider: script
@@ -36,8 +36,13 @@ deploy:
       branch: master
     skip_cleanup: true
     script: chef exec rake release
-  
-notifications:
-  slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb
 
-  
+after_script:
+  - test $TRAVIS_PULL_REQUEST = false && chef exec rake documentation
+
+notifications:
+  slack:
+    rooms:
+      - secure: "grUcRA342vejFCkgksOR2CU5ecaDV+b34Hxvosi65lzS4KouwMu1TXt7MLZCwLhqjAkU0K2q/TgYNkbMi6xmbWpy1W0Of29gF/cwlowdQ5EIIiW6P5oRNgTQZnurKcsW4WWHaxRoikPbd8uGVId0gq3YkmcjjPWUsGOJAkGcggZT7pmgA+Kik55ER028beOEJzwhD8kbDxKKbaC2jqLHW69lqszwbONjElkK0F7hcHKFW3UJHU6QrGQF/afJWjGdTX7PjYNEMEFPlspYPdDU+vp/3N+HAQpaNaFc9f4HH8eTU9ZfReQ04LFnk2e3cPt/M/CRfEmPY0K8XSV5l2VTCJnuPUiM47SpqRXmrD+xqsHAob9zx8ec52EdLUYCCxIOO+E1BgD3CfeBwshNG6kidUDCtebtwvCFvS21gMHpXD8EPVVv7tn0R9QYAlaTVNfhjuI+/HmNvW4gmanhyg8u+xl9gxc5AVBDMFpF8oROH+LxTcJy1xMPbv1NQtVDf01WHnTbclZ5/WuYP1Qazu2QTjQ+P9aiKE4Q6D2XyL8B7e5OUgLTCyZMQ2RP/fZS46rJaUQo1q70AxDG7/A8PY+ZBu3BEjTwhU07qFvWAa286mCx66IVvuZwfco4MVAUPlc2eyqFIIIUMR25GAfjvFGecV9HL9JgLpwR55nA8Il+oyU="
+    on_success: change
+    on_failure: always  
