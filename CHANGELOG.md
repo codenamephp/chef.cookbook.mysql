@@ -7,6 +7,11 @@
 **Implemented enhancements:**
 
 - Oracle Repo: Tests are flakey [\#13](https://github.com/codenamephp/chef.cookbook.mysql/issues/13)
+- \[RELEASE 1.0.2\] [\#14](https://github.com/codenamephp/chef.cookbook.mysql/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
+
+**Fixed bugs:**
+
+- \\[RELEASE 1.0.2\\] [\#14](https://github.com/codenamephp/chef.cookbook.mysql/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v1.0.1](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.1) (2018-08-25)
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.0...v1.0.1)
