@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.mysql/tree/HEAD)
+## [2.0.0](https://github.com/codenamephp/chef.cookbook.mysql/tree/2.0.0) (2019-12-03)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...2.0.0)
 
 **Closed issues:**
 
