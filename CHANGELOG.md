@@ -1,3 +1,24 @@
+# Changelog
+
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.mysql/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...HEAD)
+
+**Closed issues:**
+
+- Remove mysql [\#17](https://github.com/codenamephp/chef.cookbook.mysql/issues/17)
+- Remove bind\_address [\#16](https://github.com/codenamephp/chef.cookbook.mysql/issues/16)
+- Reset root to user/pw authentication [\#15](https://github.com/codenamephp/chef.cookbook.mysql/issues/15)
+
+## [v1.0.2](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.2) (2018-12-18)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.1...v1.0.2)
+
+**Implemented enhancements:**
+
+- Oracle Repo: Tests are flakey [\#13](https://github.com/codenamephp/chef.cookbook.mysql/issues/13)
+- \[RELEASE 1.0.2\] [\#14](https://github.com/codenamephp/chef.cookbook.mysql/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v1.0.1](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.1) (2018-08-25)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.0...v1.0.1)
@@ -5,7 +26,6 @@
 **Implemented enhancements:**
 
 - 5.6: Make sure dirmngr is installed [\#11](https://github.com/codenamephp/chef.cookbook.mysql/issues/11)
-- MySQL 5.6 [\#8](https://github.com/codenamephp/chef.cookbook.mysql/issues/8)
 
 **Merged pull requests:**
 
@@ -17,6 +37,7 @@
 
 **Implemented enhancements:**
 
+- MySQL 5.6 [\#8](https://github.com/codenamephp/chef.cookbook.mysql/issues/8)
 - Auto generate changelog [\#7](https://github.com/codenamephp/chef.cookbook.mysql/issues/7)
 
 **Merged pull requests:**
