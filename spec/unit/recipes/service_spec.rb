@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook:: codenamephp_mysql
 # Spec:: default
@@ -15,8 +17,8 @@ describe 'codenamephp_mysql::service' do
     end
 
     it 'makes sure the service is started and enabled' do
-      expect(chef_run).to enable_service('mysql')
-      expect(chef_run).to start_service('mysql')
+      expect(chef_run).to enable_service('mariadb')
+      expect(chef_run).to start_service('mariadb')
     end
   end
 end

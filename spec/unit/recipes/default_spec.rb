@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook:: codenamephp_mysql
 # Spec:: default
@@ -16,11 +18,11 @@ describe 'codenamephp_mysql::default' do
     end
 
     it 'installs mysql server from package' do
-      expect(chef_run).to install_package('mysql-server')
+      expect(chef_run).to install_package('mariadb-server')
     end
 
     it 'installs mysql client from package' do
-      expect(chef_run).to install_package('mysql-client')
+      expect(chef_run).to install_package('mariadb-client')
     end
 
     it 'includes the service recipe' do
@@ -29,6 +31,10 @@ describe 'codenamephp_mysql::default' do
 
     it 'includes the innodb_file_per_table recipe' do
       expect(chef_run).to include_recipe('codenamephp_mysql::innodb_file_per_table')
+    end
+
+    it 'includes the innodb_file_per_table recipe' do
+      expect(chef_run).to include_recipe('codenamephp_mysql::bindaddress')
     end
   end
 end
