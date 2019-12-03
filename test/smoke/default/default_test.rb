@@ -31,6 +31,10 @@ control 'mysql-1.0' do
     its('stdout') { should match(/innodb_file_per_table\s+ON/) }
   end
 
+  describe command('mysql -NBe "SHOW GLOBAL VARIABLES WHERE Variable_name=\'bind_address\';"') do
+    its('stdout') { should match(/bind_address\s+\*/) }
+  end
+
   describe command('mysql -NBe "SHOW GRANTS FOR root"') do
     its('stdout') { should match(/GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION/) }
   end
