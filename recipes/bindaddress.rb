@@ -2,14 +2,14 @@
 
 #
 # Cookbook:: .
-# Recipe:: innodb_file_per_table
+# Recipe:: bindaddress
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
 include_recipe '::service'
 
-template '/etc/mysql/mariadb.conf.d/60-innodb.cnf' do
-  source 'innodb.cnf.erb'
+template '/etc/mysql/mariadb.conf.d/60-bindaddress.cnf' do
+  source 'bindaddress.cnf.erb'
   owner 'root'
   group 'root'
   action :create
