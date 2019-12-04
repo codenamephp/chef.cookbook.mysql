@@ -45,6 +45,7 @@ deploy:
     name: codenamephp_mysql
     category: "Others"
     client_key: codenamephp.pem
+    edge: true
 
   
 after_script:
