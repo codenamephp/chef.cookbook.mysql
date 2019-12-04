@@ -42,6 +42,7 @@ deploy:
       branch: master
     skip_cleanup: true
     user_id: codenamephp
+    name: codenamephp_mysql
     category: "Others"
     client_key: codenamephp.pem
 
