@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.mysql/tree/HEAD)
+## [v2.0.0](https://github.com/codenamephp/chef.cookbook.mysql/tree/v2.0.0) (2019-12-03)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...v2.0.0)
 
 **Closed issues:**
 
@@ -10,13 +10,16 @@
 - Remove bind\_address [\#16](https://github.com/codenamephp/chef.cookbook.mysql/issues/16)
 - Reset root to user/pw authentication [\#15](https://github.com/codenamephp/chef.cookbook.mysql/issues/15)
 
+**Merged pull requests:**
+
+- \[RELEASE 2.0.0\] [\#18](https://github.com/codenamephp/chef.cookbook.mysql/pull/18) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v1.0.2](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.2) (2018-12-18)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.1...v1.0.2)
 
 **Implemented enhancements:**
 
-- Oracle Repo: Tests are flakey [\#13](https://github.com/codenamephp/chef.cookbook.mysql/issues/13)
 - \[RELEASE 1.0.2\] [\#14](https://github.com/codenamephp/chef.cookbook.mysql/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v1.0.1](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.1) (2018-08-25)
@@ -59,6 +62,7 @@
 
 **Implemented enhancements:**
 
+- Oracle Repo: Tests are flakey [\#13](https://github.com/codenamephp/chef.cookbook.mysql/issues/13)
 - Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
 - Restrict travis deployments to master [\#1](https://github.com/codenamephp/chef.cookbook.mysql/issues/1)
 - Fix \#1: Added conditions for master branch to release since releases … [\#2](https://github.com/codenamephp/chef.cookbook.mysql/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))

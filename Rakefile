@@ -154,4 +154,4 @@ namespace :release do
 end
 
 desc 'Run the release cycle'
-task release: %w[documentation:changelog_release release:stove release:berksUpload]
+task release: %w[documentation:changelog_release release:berksUpload]
