@@ -1,14 +1,18 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.mysql/tree/HEAD)
+## [v2.0.0](https://github.com/codenamephp/chef.cookbook.mysql/tree/v2.0.0) (2019-12-03)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...v2.0.0)
 
 **Closed issues:**
 
 - Remove mysql [\#17](https://github.com/codenamephp/chef.cookbook.mysql/issues/17)
 - Remove bind\_address [\#16](https://github.com/codenamephp/chef.cookbook.mysql/issues/16)
 - Reset root to user/pw authentication [\#15](https://github.com/codenamephp/chef.cookbook.mysql/issues/15)
+
+**Merged pull requests:**
+
+- \[RELEASE 2.0.0\] [\#18](https://github.com/codenamephp/chef.cookbook.mysql/pull/18) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v1.0.2](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.2) (2018-12-18)
 
