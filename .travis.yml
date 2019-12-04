@@ -37,7 +37,15 @@ deploy:
       branch: master
     skip_cleanup: true
     script: chef exec rake release
+  - provider: chef_supermarket
+    on:
+      branch: master
+    skip_cleanup: true
+    user_id: codenamephp
+    category: "Others"
+    client_key: codenamephp.pem
 
+  
 after_script:
   - test $TRAVIS_PULL_REQUEST = false && chef exec rake documentation
 
