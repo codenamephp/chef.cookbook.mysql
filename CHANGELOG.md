@@ -20,6 +20,7 @@
 
 **Implemented enhancements:**
 
+- Oracle Repo: Tests are flakey [\#13](https://github.com/codenamephp/chef.cookbook.mysql/issues/13)
 - \[RELEASE 1.0.2\] [\#14](https://github.com/codenamephp/chef.cookbook.mysql/pull/14) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v1.0.1](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.1) (2018-08-25)
@@ -29,6 +30,7 @@
 **Implemented enhancements:**
 
 - 5.6: Make sure dirmngr is installed [\#11](https://github.com/codenamephp/chef.cookbook.mysql/issues/11)
+- Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
 
 **Merged pull requests:**
 
@@ -62,8 +64,6 @@
 
 **Implemented enhancements:**
 
-- Oracle Repo: Tests are flakey [\#13](https://github.com/codenamephp/chef.cookbook.mysql/issues/13)
-- Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
 - Restrict travis deployments to master [\#1](https://github.com/codenamephp/chef.cookbook.mysql/issues/1)
 - Fix \#1: Added conditions for master branch to release since releases … [\#2](https://github.com/codenamephp/chef.cookbook.mysql/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
 
