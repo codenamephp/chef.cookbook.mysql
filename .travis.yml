@@ -13,7 +13,7 @@ services: docker
 env:
   global:
     - CHEF_LICENSE=accept
-    - secure: "d9z1iUX8c3bMiTdYspOPaSOqMCBnVS4lts3Hns57OWajpmYrPC28uZW9a10Fi1mLnJKY7zdFPIDDQJLxFe4IL3DuUQsPcM/xAj5g4IFXTy1PBXnzODftllhqhVG0fa8U+VkqeEhSsTJXGP6hvObPfwj6Ov71yiwoUe6lvRLeWjbwJR4TMBz8a+fjXV1Zc/UnHiJEW7AssG+GfBPSzYJg6TzeFNwV0NqhPN9qnJkgsaizoZ6EGkeZ1i0e5889GgHTT3O/IwRfZONZmalx3sXi4MKwMpX7nXO8FI2B22LUML/tWr6NtiJGuRdzEA9eZd9aLxQb0txfQcxi0nyVOUCbomNtpk38jXj1R1RfgXH9W2lbg52C47jZtXClf6eHZUAvJj7WxQA/6PAspCEpGB8kGhGOpqUl6OhkBNtkImIGbWVI5L7eeDBDiKwJQnBG9qhRha3+PBPCrLOzDeOPAlXDO9JIBrUT3oknVxe0ae2+6kzdE2O0NzAZmeOQFU04kCozL17Q/UaeuULSLoE3tOnStwoRVYq9QhqGfu7TYvwRPu79efWpIs+6SR8ZEYIaFGctfp6OO2TyVlI2JHYbYTCAhoMU3gdakoZQkSRbC4sF+QD7BRXSz8hUIptE1Gb0MS6cs9NF/FKi3eJEa/g9PMYez/PgKlq7cH+Qus+0OKAIfwI="
+    secure: "DRfihhK194TMgXiUTuFEk+tMCjMHXylsDBtF0aR0snkNYRFPD9LoyZ1j7vkSiKN3yFxSGtsadWDq2bQPB5jLLDoAHYAIxlsvnTjLgGUCAiTVaLG+dbs81oM8DeXsPf4k1Jbr5ZSE7LQGteU/9hLCGrknH1w4xluqpAI9F44YUuNMIVTPI5QYCOXle51w7cCS4FyFi+F8IpL/XnOZ0lTjMFqzLqHoWpzal9k51OSYntRFYWB+gQruKYyQmNb85oAOWywH3A52rPYBWXCNqDjVi/dK5Gib6qY3rPVkGrW6WgVbKuqeDxUYT/4coHu20/B/TLOLODobVm8y3BNEdYg5AvjGbpp8FDMpCYvHPvH4+fNFrp19YGT2qaUiMFGV6Cc+n5qjib2suRRGz+nYFJwkipki5hBzM8r6HR5uKvpHDf147YPqDA/ADzXoM0O/YzAegZafUJsk4cISSC3xZGNvc0lphzidGrwsriJnXodZIUEkdoSztH/Vwsd9i41zaLV2eQfCYucQtMBo/Jj2G6riUWB5yeyWygKawGgEDHrqbkVHjbkLN+P+ZR7TUJltHENYopF0RwIC2O/P1Uy43bDQW4CU5AbKgqFAvOyKA34mGyZYk5HVP6jvwAx5o3El/NXtKUIGFZ2iy/vCcilXcybW0N6kmmtP+ypxVHGvUhvOJEI="
 addons:
   apt:
     sources:
@@ -24,7 +24,7 @@ addons:
 install:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
   - eval "$(chef shell-init bash)"
-  - openssl aes-256-cbc -K $encrypted_4c0189a98bd3_key -iv $encrypted_4c0189a98bd3_iv -in codenamephp.pem.enc -out codenamephp.pem -d
+  - openssl aes-256-cbc -K $encrypted_3613b8b09fae_key -iv $encrypted_3613b8b09fae_iv -in ./codenamephp.pem.enc -out ./codenamephp.pem -d
   - gem install github_changelog_generator
   - gem install activesupport
 
@@ -44,6 +44,6 @@ after_script:
 notifications:
   slack:
     rooms:
-      - secure: "grUcRA342vejFCkgksOR2CU5ecaDV+b34Hxvosi65lzS4KouwMu1TXt7MLZCwLhqjAkU0K2q/TgYNkbMi6xmbWpy1W0Of29gF/cwlowdQ5EIIiW6P5oRNgTQZnurKcsW4WWHaxRoikPbd8uGVId0gq3YkmcjjPWUsGOJAkGcggZT7pmgA+Kik55ER028beOEJzwhD8kbDxKKbaC2jqLHW69lqszwbONjElkK0F7hcHKFW3UJHU6QrGQF/afJWjGdTX7PjYNEMEFPlspYPdDU+vp/3N+HAQpaNaFc9f4HH8eTU9ZfReQ04LFnk2e3cPt/M/CRfEmPY0K8XSV5l2VTCJnuPUiM47SpqRXmrD+xqsHAob9zx8ec52EdLUYCCxIOO+E1BgD3CfeBwshNG6kidUDCtebtwvCFvS21gMHpXD8EPVVv7tn0R9QYAlaTVNfhjuI+/HmNvW4gmanhyg8u+xl9gxc5AVBDMFpF8oROH+LxTcJy1xMPbv1NQtVDf01WHnTbclZ5/WuYP1Qazu2QTjQ+P9aiKE4Q6D2XyL8B7e5OUgLTCyZMQ2RP/fZS46rJaUQo1q70AxDG7/A8PY+ZBu3BEjTwhU07qFvWAa286mCx66IVvuZwfco4MVAUPlc2eyqFIIIUMR25GAfjvFGecV9HL9JgLpwR55nA8Il+oyU="
+      - secure: "MemAVS2nuI33w/vRN+xnHmHUUKQhrNsfku3wY817Oup5VgycmB+1+58aUAzj0KfUAgdylNkhVCc6U1TKuEuo9DOTj/+RBGnJMD0B7J8NNMKu2R3+5H1SOxRYZlXYbjXZsf+10XU/TdmRf9lU2lIwIE/5QYohkgBSIYBxGyRqEEIyOhpQnqZgNnil9T0Sa86kjN+cukXDS0jaZEzR/m+EVND2Qsc7biZxVw/tMnRQ9QEKRja94lqqdtM4inGnlh9e+NdHqDzGSCtwuAq4NYBr8KCRc/uIyVCwDxTLYZq55ec5codbKjMZ2q9XisCZkFqkdZNXeNb5bZ5fl43fcb9fwasZUSBSBlq/ICLjIWKvYlq6GgXHwUVzk7JlgrwRXid8MshQosD6KAno7q2fWWhpNAJ4awVPRMDNNNrvsFHr9YqT0hFOlYYqhW36qZvjLsPJ8S02yh4DqdVkQfOai0DWha7A+fk5r5qwPTjnvv3sEujqbHdmwPfq9qLsCMXC+AbUHS4TdreS81kbtGOnz8IQpAPfutk4zDus/cw9n6LG0uu6F0ePWQYSk4B/9UFPoIzPFbsy1q0xu1z1XZX0sQ+CFnTwhG9niUZ2pu1Z+l1BQY7s01fEODfBhcv3FwVAssebas11GJ2nUnobiKkifPU3TR3UZ4XFXGhzEhxNAZnmHAo="
     on_success: change
     on_failure: always  
