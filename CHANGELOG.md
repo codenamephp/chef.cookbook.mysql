@@ -30,11 +30,6 @@
 **Implemented enhancements:**
 
 - 5.6: Make sure dirmngr is installed [\#11](https://github.com/codenamephp/chef.cookbook.mysql/issues/11)
-- Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
-
-**Merged pull requests:**
-
-- \[RELEASE 1.0.1\] [\#12](https://github.com/codenamephp/chef.cookbook.mysql/pull/12) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v1.0.0](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.0) (2018-08-25)
 
@@ -47,6 +42,7 @@
 
 **Merged pull requests:**
 
+- \[RELEASE 1.0.1\] [\#12](https://github.com/codenamephp/chef.cookbook.mysql/pull/12) ([bastianschwarz](https://github.com/bastianschwarz))
 - Updated github token for travis [\#10](https://github.com/codenamephp/chef.cookbook.mysql/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
 - RELEASE 1.0.0 [\#9](https://github.com/codenamephp/chef.cookbook.mysql/pull/9) ([bastianschwarz](https://github.com/bastianschwarz))
 
@@ -64,6 +60,7 @@
 
 **Implemented enhancements:**
 
+- Restrict travis builds to master, dev and PRs [\#3](https://github.com/codenamephp/chef.cookbook.mysql/issues/3)
 - Restrict travis deployments to master [\#1](https://github.com/codenamephp/chef.cookbook.mysql/issues/1)
 - Fix \#1: Added conditions for master branch to release since releases … [\#2](https://github.com/codenamephp/chef.cookbook.mysql/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
 
