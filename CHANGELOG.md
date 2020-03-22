@@ -4,10 +4,6 @@
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...v2.0.0)
 
-**Implemented enhancements:**
-
-- 5.6: Make sure dirmngr is installed [\#11](https://github.com/codenamephp/chef.cookbook.mysql/issues/11)
-
 **Closed issues:**
 
 - Remove mysql [\#17](https://github.com/codenamephp/chef.cookbook.mysql/issues/17)
@@ -30,6 +26,10 @@
 ## [v1.0.1](https://github.com/codenamephp/chef.cookbook.mysql/tree/v1.0.1) (2018-08-25)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.0...v1.0.1)
+
+**Implemented enhancements:**
+
+- 5.6: Make sure dirmngr is installed [\#11](https://github.com/codenamephp/chef.cookbook.mysql/issues/11)
 
 **Merged pull requests:**
 
