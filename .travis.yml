@@ -1,12 +1,7 @@
-language: ruby
-sudo: required
-dist: trusty
-
 branches:
   only:
   - master
-  - dev
-  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  - /^\d+\.\d+(\.\d+)?(-\S*)?$/
   
 services: docker
 
@@ -14,46 +9,15 @@ env:
   global:
     - CHEF_LICENSE=accept
     - secure: "DRfihhK194TMgXiUTuFEk+tMCjMHXylsDBtF0aR0snkNYRFPD9LoyZ1j7vkSiKN3yFxSGtsadWDq2bQPB5jLLDoAHYAIxlsvnTjLgGUCAiTVaLG+dbs81oM8DeXsPf4k1Jbr5ZSE7LQGteU/9hLCGrknH1w4xluqpAI9F44YUuNMIVTPI5QYCOXle51w7cCS4FyFi+F8IpL/XnOZ0lTjMFqzLqHoWpzal9k51OSYntRFYWB+gQruKYyQmNb85oAOWywH3A52rPYBWXCNqDjVi/dK5Gib6qY3rPVkGrW6WgVbKuqeDxUYT/4coHu20/B/TLOLODobVm8y3BNEdYg5AvjGbpp8FDMpCYvHPvH4+fNFrp19YGT2qaUiMFGV6Cc+n5qjib2suRRGz+nYFJwkipki5hBzM8r6HR5uKvpHDf147YPqDA/ADzXoM0O/YzAegZafUJsk4cISSC3xZGNvc0lphzidGrwsriJnXodZIUEkdoSztH/Vwsd9i41zaLV2eQfCYucQtMBo/Jj2G6riUWB5yeyWygKawGgEDHrqbkVHjbkLN+P+ZR7TUJltHENYopF0RwIC2O/P1Uy43bDQW4CU5AbKgqFAvOyKA34mGyZYk5HVP6jvwAx5o3El/NXtKUIGFZ2iy/vCcilXcybW0N6kmmtP+ypxVHGvUhvOJEI="
-addons:
-  apt:
-    sources:
-    - chef-current-xenial
-    packages:
-    - chefdk
 
 install:
   - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
   - eval "$(chef shell-init bash)"
   - openssl aes-256-cbc -K $encrypted_3613b8b09fae_key -iv $encrypted_3613b8b09fae_iv -in ./codenamephp.pem.enc -out ./codenamephp.pem -d
-  - gem install github_changelog_generator
-  - gem install activesupport
-
-script:
-  - chef exec rake
-  
-deploy:
-  - provider: script
-    on:
-      branch: master
-    skip_cleanup: true
-    script: chef exec rake release
-  - provider: chef_supermarket
-    on:
-      branch: master
-    skip_cleanup: true
-    user_id: codenamephp
-    name: codenamephp_mysql
-    category: "Others"
-    client_key: codenamephp.pem
-    edge: true
-
-  
-after_script:
-  - test $TRAVIS_PULL_REQUEST = false && chef exec rake documentation
 
 notifications:
   slack:
     rooms:
       - secure: "MemAVS2nuI33w/vRN+xnHmHUUKQhrNsfku3wY817Oup5VgycmB+1+58aUAzj0KfUAgdylNkhVCc6U1TKuEuo9DOTj/+RBGnJMD0B7J8NNMKu2R3+5H1SOxRYZlXYbjXZsf+10XU/TdmRf9lU2lIwIE/5QYohkgBSIYBxGyRqEEIyOhpQnqZgNnil9T0Sa86kjN+cukXDS0jaZEzR/m+EVND2Qsc7biZxVw/tMnRQ9QEKRja94lqqdtM4inGnlh9e+NdHqDzGSCtwuAq4NYBr8KCRc/uIyVCwDxTLYZq55ec5codbKjMZ2q9XisCZkFqkdZNXeNb5bZ5fl43fcb9fwasZUSBSBlq/ICLjIWKvYlq6GgXHwUVzk7JlgrwRXid8MshQosD6KAno7q2fWWhpNAJ4awVPRMDNNNrvsFHr9YqT0hFOlYYqhW36qZvjLsPJ8S02yh4DqdVkQfOai0DWha7A+fk5r5qwPTjnvv3sEujqbHdmwPfq9qLsCMXC+AbUHS4TdreS81kbtGOnz8IQpAPfutk4zDus/cw9n6LG0uu6F0ePWQYSk4B/9UFPoIzPFbsy1q0xu1z1XZX0sQ+CFnTwhG9niUZ2pu1Z+l1BQY7s01fEODfBhcv3FwVAssebas11GJ2nUnobiKkifPU3TR3UZ4XFXGhzEhxNAZnmHAo="
-    on_success: change
+    on_success: never
     on_failure: always  
