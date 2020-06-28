@@ -1,5 +1,5 @@
 # Chef Cookbook MySQL
-[![Build Status](https://travis-ci.org/codenamephp/chef.cookbook.mysql.svg?branch=dev)](https://travis-ci.org/codenamephp/chef.cookbook.mysql)
+[![Build Status](https://travis-ci.org/codenamephp/chef.cookbook.mysql.svg?branch=master)](https://travis-ci.org/codenamephp/chef.cookbook.mysql)
 
 The default cookbook installs mariadb. Yes, only mariadb is installed even though the cookbook is named "mysql" for historic reasons.
 
