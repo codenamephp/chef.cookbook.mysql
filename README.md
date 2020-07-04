@@ -3,6 +3,9 @@
 
 The default cookbook installs mariadb. Yes, only mariadb is installed even though the cookbook is named "mysql" for historic reasons.
 
+## Deprecated
+The whole cookbook is now deprecated. I don't want to fiddle around with installs anymore when there's excellent docker images around.
+
 ## Why not mysql cookbook from chef?
 
 At the time this cookbook was created, the [mysql cookbook by chef][chef-mysql] did not support debian stretch. Also, the cookbook provides a whole lot of features ... none of which I plan to use.
