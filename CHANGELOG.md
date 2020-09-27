@@ -1,5 +1,15 @@
 # Changelog
 
+## [2.0.2](https://github.com/codenamephp/chef.cookbook.mysql/tree/2.0.2) (2020-06-28)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v2.0.0...2.0.2)
+
+**Merged pull requests:**
+
+- Updated build files [\#22](https://github.com/codenamephp/chef.cookbook.mysql/pull/22) ([bastianschwarz](https://github.com/bastianschwarz))
+- \[skip-ci\] removing dev branch [\#21](https://github.com/codenamephp/chef.cookbook.mysql/pull/21) ([bastianschwarz](https://github.com/bastianschwarz))
+- \[RELEASE 2.0.1\] [\#19](https://github.com/codenamephp/chef.cookbook.mysql/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v2.0.0](https://github.com/codenamephp/chef.cookbook.mysql/tree/v2.0.0) (2019-12-03)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.mysql/compare/v1.0.2...v2.0.0)
