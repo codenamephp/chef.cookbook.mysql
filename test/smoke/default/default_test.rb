@@ -36,6 +36,6 @@ control 'mysql-1.0' do
   end
 
   describe command('mysql -NBe "SHOW GRANTS FOR root"') do
-    its('stdout') { should match(/GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' WITH GRANT OPTION/) }
+    its('stdout') { should match(/GRANT ALL PRIVILEGES ON *.* TO `root`@`%` WITH GRANT OPTION/) }
   end
 end
